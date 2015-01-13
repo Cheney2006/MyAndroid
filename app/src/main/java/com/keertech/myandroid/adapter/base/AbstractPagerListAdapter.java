@@ -1,0 +1,30 @@
+package com.keertech.myandroid.adapter.base;
+
+import android.view.View;
+
+import java.util.List;
+
+/**
+ * *****************************************
+ * Description ：抽象的PagerAdapter实现类,封装了内容为View,数据为List类型的适配器实现.
+ * Created by cy on 2014/11/20.
+ * *****************************************
+ */
+public abstract class AbstractPagerListAdapter<T> extends AbstractViewPagerAdapter {
+    protected List<T> mData;
+
+    public AbstractPagerListAdapter(List<T> data) {
+        mData = data;
+    }
+
+    @Override
+    public int getCount() {
+        return mData.size();
+    }
+
+    public abstract View newView(int position);
+
+    public T getItem(int position) {
+        return mData.get(position);
+    }
+}

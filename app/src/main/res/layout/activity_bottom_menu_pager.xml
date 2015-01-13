@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/content_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+
+    <RadioGroup
+        android:id="@+id/group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/maintab_toolbar_bg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/home_rb"
+            android:drawableTop="@drawable/tab_home_btn"
+            style="@style/tab_item_background"
+            android:checked="true"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/message_rb"
+            style="@style/tab_item_background"
+            android:drawableTop="@drawable/tab_message_btn"
+            android:text="消息" />
+
+        <RadioButton
+            android:id="@+id/friend_rb"
+            style="@style/tab_item_background"
+            android:drawableTop="@drawable/tab_selfinfo_btn"
+            android:text="好友" />
+
+        <RadioButton
+            android:id="@+id/square_rb"
+            style="@style/tab_item_background"
+            android:drawableTop="@drawable/tab_square_btn"
+            android:text="广场" />
+        <RadioButton
+            android:id="@+id/more_rb"
+            style="@style/tab_item_background"
+            android:drawableTop="@drawable/tab_more_btn"
+            android:text="更多" />
+    </RadioGroup>
+
+</LinearLayout>

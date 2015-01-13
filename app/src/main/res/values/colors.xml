@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_transparent">#00000000</color>
+    <color name="color_nav_bg">#EEECEB</color>
+    <color name="color_green">#0CBF47</color>
+    <color name="color_green_pressed">#0CBF47</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_title_black">#474747</color>
+    <color name="color_label_gray">#818B8C</color>
+    <color name="color_pressed">#E4F3ED</color>
+    <color name="color_line">#D6D6D6</color>
+    <color name="color_no_done">#C23535</color>
+    <color name="color_blue">#5FB2F0</color>
+</resources>

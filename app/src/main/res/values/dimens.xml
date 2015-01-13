@@ -1,0 +1,30 @@
+<resources>
+    <!--字体大小-->
+    <dimen name="dimen_font_12">12dp</dimen>
+    <dimen name="dimen_font_14">14dp</dimen>
+    <dimen name="dimen_font_16">16dp</dimen>
+    <dimen name="dimen_font_18">18dp</dimen>
+    <dimen name="dimen_font_20">20dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!--侧边栏设置-->
+    <dimen name="slidingmenu_offset">80dp</dimen>
+    <dimen name="shadow_width">15dp</dimen>
+    <!--侧边menu文本大小-->
+    <dimen name="sliding_menu_width">150dp</dimen>
+    <dimen name="sliding_menu_left">30dp</dimen>
+
+    <dimen name="dimen_button_height">46dp</dimen>
+    <dimen name="dimen_button_margin">10dp</dimen>
+    <dimen name="dimen_button_corner">10dp</dimen>
+    <dimen name="dimen_arrow_right">15dp</dimen>
+    <dimen name="dimen_layout_txt_top">10dp</dimen>
+    <dimen name="dimen_radio_left">28dp</dimen>
+    <dimen name="dimen_label_input_top">5dp</dimen>
+    <dimen name="dimen_action_bar_progress_bar_size">25dp</dimen>
+    <dimen name="dimen_layout_vertical_margin">10dp</dimen>
+    <dimen name="dimen_divider_height">1.5dp</dimen>
+
+</resources>

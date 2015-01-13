@@ -1,0 +1,25 @@
+<resources>
+
+
+    <style name="LineRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dimen_divider_height</item>
+        <item name="android:background">@drawable/bg_list_item</item>
+    </style>
+
+
+    <style name="tab_item_background">
+        <item name="android:ellipsize">marquee</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">@drawable/selector_tab_background</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:drawablePadding">3.0dip</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:textColor">@drawable/txt_color_checked</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+    </style>
+</resources>
