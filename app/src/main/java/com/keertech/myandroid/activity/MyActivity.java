@@ -52,6 +52,7 @@ public class MyActivity extends AbstractBarActivity {
         myMenuItemList.add(new MyMenuItem("CardView使用", MyCardViewActivity.class));
         myMenuItemList.add(new MyMenuItem("PoiSearchNearBy使用", MyPoiSearchActivity.class));
         myMenuItemList.add(new MyMenuItem("IndexableListView使用", IndexableListViewActivity.class));
+        myMenuItemList.add(new MyMenuItem("VIEW绘制", CustomViewActivity.class));
         listView.setAdapter(new MenuAdapter(mContext, myMenuItemList));
 
     }

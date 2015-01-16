@@ -69,6 +69,7 @@
             android:theme="@style/Theme.CustomPageIndicator" />
         <activity android:name=".activity.MyPoiSearchActivity" />
         <activity android:name=".activity.IndexableListViewActivity" />
+        <activity android:name=".activity.CustomViewActivity" />
 
         <service
             android:name="com.baidu.location.f"
