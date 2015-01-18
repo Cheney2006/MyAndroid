@@ -13,7 +13,7 @@ import android.widget.ImageView;
 
 /**
  * *****************************************
- * Description ：
+ * Description ：http://blog.csdn.net/lmj623565791/article/details/24555655
  * Created by cy on 2015/1/16.
  * *****************************************
  */
