@@ -15,7 +15,7 @@
             android:id="@+id/photo_iv"
             android:layout_width="54dp"
             android:layout_height="54dp"
-            android:background="@drawable/photo" />
+            android:background="@drawable/circle_photo" />
 
         <TextView
             android:id="@+id/title_tv"

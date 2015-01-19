@@ -70,6 +70,7 @@
         <activity android:name=".activity.MyPoiSearchActivity" />
         <activity android:name=".activity.IndexableListViewActivity" />
         <activity android:name=".activity.CustomViewActivity" />
+        <activity android:name=".activity.CircleViewActivity" />
 
         <service
             android:name="com.baidu.location.f"
