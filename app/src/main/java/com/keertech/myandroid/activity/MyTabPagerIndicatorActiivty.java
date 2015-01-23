@@ -9,7 +9,7 @@ import android.support.v4.view.ViewPager;
 import com.keertech.myandroid.R;
 import com.keertech.myandroid.activity.base.AbstractBarActivity;
 import com.keertech.myandroid.fragment.TestFragment;
-import com.keertech.common.view.PagerIndicator.TabPageIndicator;
+import com.keertech.common.view.pagerIndicator.TabPageIndicator;
 import com.yftools.ViewUtil;
 import com.yftools.view.annotation.ContentView;
 

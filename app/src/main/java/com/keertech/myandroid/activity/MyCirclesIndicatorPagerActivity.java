@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.keertech.common.view.PagerIndicator.CirclePageIndicator;
+import com.keertech.common.view.pagerIndicator.CirclePageIndicator;
 import com.keertech.myandroid.R;
 import com.keertech.myandroid.activity.base.AbstractBarActivity;
 import com.keertech.myandroid.fragment.TestFragment;
