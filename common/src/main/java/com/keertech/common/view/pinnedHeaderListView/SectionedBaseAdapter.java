@@ -125,6 +125,19 @@ public abstract class SectionedBaseAdapter extends BaseAdapter implements Pinned
         return 0;
     }
 
+    public int getSectionPosition(int section) {
+        int position = 0;
+        for (int i = 0; i < internalGetSectionCount(); i++) {
+            if (i < section) {
+                int sectionCount = internalGetCountForSection(i);
+                position += sectionCount + 1;
+            } else if (i == section) {
+                break;
+            }
+        }
+        return position;
+    }
+
     public int getPositionInSectionForPosition(int position) {
         // first try to retrieve values from cache
         Integer cachedPosition = mSectionPositionCache.get(position);

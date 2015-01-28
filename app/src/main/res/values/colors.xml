@@ -11,4 +11,6 @@
     <color name="color_line">#D6D6D6</color>
     <color name="color_no_done">#C23535</color>
     <color name="color_blue">#5FB2F0</color>
+    <color name="color_letter_bg">#F0F0F0</color>
+    <color name="color_cut_bg">#55FFFFFF</color>
 </resources>

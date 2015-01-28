@@ -30,13 +30,11 @@ public class CitySectionedAdapter extends SectionedBaseAdapter {
 
     @Override
     public Object getItem(int section, int position) {
-        // TODO Auto-generated method stub
-        return null;
+        return itemList != itemList.get(section).get(position) ? sectionList.size() : null;
     }
 
     @Override
     public long getItemId(int section, int position) {
-        // TODO Auto-generated method stub
         return 0;
     }
 
@@ -61,6 +59,7 @@ public class CitySectionedAdapter extends SectionedBaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+        viewHolder.title_tv.setText(itemList.get(section).get(position).name);
         return convertView;
     }
 
@@ -75,6 +74,7 @@ public class CitySectionedAdapter extends SectionedBaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+        viewHolder.title_tv.setText(sectionList.get(section).getString("FIRST_LETTER"));
         return convertView;
     }
 

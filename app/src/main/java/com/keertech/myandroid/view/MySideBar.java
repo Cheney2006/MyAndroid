@@ -56,7 +56,7 @@ public class MySideBar extends View {
             paint.setTextSize(20);
             // 选中的状态
             if (i == choose) {
-                paint.setColor(Color.parseColor("#3399ff"));
+                paint.setColor(Color.parseColor("#0CBF47"));
                 paint.setFakeBoldText(true);
             }
             // x坐标等于中间-字符串宽度的一半.
@@ -76,8 +76,8 @@ public class MySideBar extends View {
         switch (action) {
             case MotionEvent.ACTION_UP:
                 setBackgroundColor(0x00000000);
-                choose = -1;//
-                invalidate();
+                //choose = -1;//
+                //invalidate();
                 if (mTextDialog != null) {
                     mTextDialog.setVisibility(View.INVISIBLE);
                 }
@@ -120,5 +120,8 @@ public class MySideBar extends View {
         public void onTouchingLetterChanged(String s);
     }
 
-
+    public void setChoose(int choose) {
+        this.choose = choose;
+        invalidate();
+    }
 }

@@ -38,6 +38,8 @@ public class MyActivity extends AbstractBarActivity {
         //TODO android-pulltorefresh   https://github.com/Trinea/android-open-project，上面ViewPage,下面ListView
         //TODO View绘制
         //TODO PinnedHeaderListView
+        //TODO 圆形裁剪
+        //TODO 上滑引导动画
         myMenuItemList = new ArrayList<MyMenuItem>();
         myMenuItemList.add(new MyMenuItem("校验控件", LoginActivity.class));
         myMenuItemList.add(new MyMenuItem("进度ActionBar", MyProgressBarActivity.class));
@@ -55,6 +57,7 @@ public class MyActivity extends AbstractBarActivity {
         myMenuItemList.add(new MyMenuItem("PinnedHeaderListView使用", MyPinnedHeaderListViewActivity.class));
         myMenuItemList.add(new MyMenuItem("VIEW绘制", CustomViewActivity.class));
         myMenuItemList.add(new MyMenuItem("圆角头像", CircleViewActivity.class));
+        myMenuItemList.add(new MyMenuItem("圆形头像裁剪", MyImageCutActivity.class));
         listView.setAdapter(new MenuAdapter(mContext, myMenuItemList));
 
     }

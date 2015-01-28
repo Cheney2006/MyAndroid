@@ -197,4 +197,8 @@ public class PinnedHeaderListView extends ListView implements OnScrollListener {
         public abstract void onSectionClick(AdapterView<?> adapterView, View view, int section, long id);
 
     }
+
+    public int getCurrentSection() {
+        return mCurrentSection;
+    }
 }

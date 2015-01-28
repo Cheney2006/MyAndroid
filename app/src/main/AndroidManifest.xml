@@ -72,6 +72,8 @@
         <activity android:name=".activity.MyPinnedHeaderListViewActivity" />
         <activity android:name=".activity.CustomViewActivity" />
         <activity android:name=".activity.CircleViewActivity" />
+        <activity android:name=".activity.MyImageCutActivity" />
+        <activity android:name=".activity.CutPicActivity" />
 
         <service
             android:name="com.baidu.location.f"
