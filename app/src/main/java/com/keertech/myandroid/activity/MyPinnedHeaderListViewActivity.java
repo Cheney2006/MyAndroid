@@ -1,6 +1,8 @@
 package com.keertech.myandroid.activity;
 
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.AbsListView;
 import android.widget.TextView;
 
@@ -34,6 +36,13 @@ public class MyPinnedHeaderListViewActivity extends AbstractBarActivity implemen
         setContentView(R.layout.activity_my_pinned_header_list_view);
         listView = (PinnedHeaderListView) findViewById(R.id.pinnedListView);
         listView.setOnScrollListener(this);
+        listView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                isChoose = false;
+                return false;
+            }
+        });
 //        LayoutInflater inflator = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 //        LinearLayout header1 = (LinearLayout) inflator.inflate(R.layout.item_list, null);
 //        ((TextView) header1.findViewById(R.id.textItem)).setText("HEADER 1");
@@ -49,11 +58,17 @@ public class MyPinnedHeaderListViewActivity extends AbstractBarActivity implemen
         try {
             List<City> cityList = null;
             dbModelList = DbOperationManager.getInstance().getDbModels(headerSql);
-            List<List<City>> cityItemList = new ArrayList<>();
+            List<List<City>> cityItemList = new ArrayList<List<City>>();
             for (DbModel dbModel : dbModelList) {
                 cityList = DbOperationManager.getInstance().getBeans(Selector.from(City.class).expr("substr(pys, 1, 1)='" + dbModel.getString("FIRST_LETTER") + "'"));
                 cityItemList.add(cityList);
             }
+            //取得热门城市
+            DbModel dbModel = new DbModel();
+            dbModel.add("FIRST_LETTER", "热门");
+            dbModelList.add(0, dbModel);
+            cityList = DbOperationManager.getInstance().getBeans(Selector.from(City.class).where("hot", "=", "1"));
+            cityItemList.add(0, cityList);
             sectionedAdapter = new CitySectionedAdapter(mContext, dbModelList, cityItemList);
             listView.setAdapter(sectionedAdapter);
         } catch (DbException e) {
@@ -74,7 +89,7 @@ public class MyPinnedHeaderListViewActivity extends AbstractBarActivity implemen
                 for (DbModel dbModel : dbModelList) {
                     if (dbModel.getString("FIRST_LETTER").equals(s)) {
                         listView.setSelection(sectionedAdapter.getSectionPosition(i));
-                        isChoose=true;
+                        isChoose = true;
                     }
                     i++;
                 }
@@ -89,8 +104,10 @@ public class MyPinnedHeaderListViewActivity extends AbstractBarActivity implemen
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-        if(!isChoose){
-            sideBar.setChoose(listView.getCurrentSection() + 1);
+        if (!isChoose) {
+            //LogUtil.d("listView.getCurrentSection()=" + dbModelList.get(listView.getCurrentSection()).getString("FIRST_LETTER"));
+            //LogUtil.d("listView.getCurrentSection()="+dbModelList.get(sectionedAdapter.getSectionForPosition(firstVisibleItem)).getString("FIRST_LETTER"));
+            sideBar.setChoose(dbModelList.get(listView.getCurrentSection()).getString("FIRST_LETTER"));
         }
     }
 }

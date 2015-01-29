@@ -1,6 +1,5 @@
 package com.keertech.myandroid.view;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -13,7 +12,6 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Xfermode;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 
 import com.keertech.myandroid.R;
 
@@ -34,21 +32,11 @@ public class ImageCut extends MyImageView {
         cur_xfermode = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
     }
 
-    @SuppressLint("ClickableViewAccessibility")
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-
-        return super.onTouchEvent(event);
-    }
-
-    @SuppressLint("DrawAllocation")
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         if (isToCutImage)
             return;
-
         if (rf == null || rf.isEmpty()) {
             r = new Rect(0, 0, getWidth(), getHeight());
             rf = new RectF(r);
@@ -83,9 +71,9 @@ public class ImageCut extends MyImageView {
         Canvas canvas = new Canvas(bitmap2);
 
         // 其实qq窃取的照片是方形的 不是圆形的 如果你要圆形的 ，可以再代码中加入
-//		canvas.drawRoundRect(new RectF(0, 0, 2 * mRadius, 2 * mRadius),
-//				mRadius, mRadius, paint);
-//		paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
+		canvas.drawRoundRect(new RectF(0, 0, 2 * mRadius, 2 * mRadius),
+				mRadius, mRadius, paint);
+		paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         RectF dst = new RectF(-bitmap.getWidth() / 2 + mRadius, -getHeight()
                 / 2 + mRadius, bitmap.getWidth() - bitmap.getWidth() / 2
                 + mRadius, getHeight() - getHeight() / 2 + mRadius);

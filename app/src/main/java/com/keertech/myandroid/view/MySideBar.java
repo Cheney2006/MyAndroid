@@ -10,11 +10,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import com.yftools.util.AndroidUtil;
+
 public class MySideBar extends View {
 
     private OnTouchingLetterChangedListener touchListener;
     // 26个字母
-    public static String[] b = {"#", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
+    public static String[] b = {"热门", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T",
             "U", "V", "W", "X", "Y", "Z"};
 
     int choose = -1;
@@ -49,11 +51,11 @@ public class MySideBar extends View {
         int singleHeight = height / b.length;// 获取每一个字母的高度
 
         for (int i = 0; i < b.length; i++) {
-            paint.setColor(Color.rgb(33, 65, 98));
+            paint.setColor(Color.rgb(47, 47, 47));
             // paint.setColor(Color.WHITE);
             paint.setTypeface(Typeface.DEFAULT_BOLD);
             paint.setAntiAlias(true);
-            paint.setTextSize(20);
+            paint.setTextSize(AndroidUtil.getDensity(getContext()) * 13);
             // 选中的状态
             if (i == choose) {
                 paint.setColor(Color.parseColor("#0CBF47"));
@@ -121,7 +123,20 @@ public class MySideBar extends View {
     }
 
     public void setChoose(int choose) {
-        this.choose = choose;
-        invalidate();
+        if (this.choose != choose) {
+            this.choose = choose;
+            invalidate();
+        }
+    }
+
+    public void setChoose(String s) {
+        if (choose == -1 || !b[choose].equals(s)) {
+            for (int i = 0, len = b.length; i < len; i++) {
+                if (b[i].equals(s)) {
+                    setChoose(i);
+                    break;
+                }
+            }
+        }
     }
 }
