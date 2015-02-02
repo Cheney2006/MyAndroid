@@ -74,6 +74,10 @@
         <activity android:name=".activity.CircleViewActivity" />
         <activity android:name=".activity.MyImageCutActivity" />
         <activity android:name=".activity.CutPicActivity" />
+        <activity android:name=".activity.WeiXinIndexActivity" />
+        <activity android:name=".activity.ScrollerViewActivity" />
+        <activity android:name=".activity.VerticalViewPagerActivity" />
+        <activity android:name=".activity.PropertyAnimActivity" />
 
         <service
             android:name="com.baidu.location.f"

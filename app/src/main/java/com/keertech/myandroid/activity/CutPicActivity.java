@@ -3,12 +3,14 @@ package com.keertech.myandroid.activity;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.keertech.myandroid.R;
 import com.keertech.myandroid.view.ImageCut;
+import com.yftools.LogUtil;
 import com.yftools.ViewUtil;
 import com.yftools.view.annotation.ViewInject;
 import com.yftools.view.annotation.event.OnClick;

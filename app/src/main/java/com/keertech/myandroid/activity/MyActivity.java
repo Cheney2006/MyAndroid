@@ -46,6 +46,7 @@ public class MyActivity extends AbstractBarActivity {
         myMenuItemList.add(new MyMenuItem("标题居中ActionBar", MyTitleCenterActivity.class));
         myMenuItemList.add(new MyMenuItem("FragmentTabHost底部菜单", BottomMenuActivity.class));
         myMenuItemList.add(new MyMenuItem("ViewPager+RadioGroup底部菜单", BottomMenuPagerActivity.class));
+        myMenuItemList.add(new MyMenuItem("仿微信底部菜单", WeiXinIndexActivity.class));
 //        myMenuItemList.add(new MyMenuItem("PagerTabStrip顶部导航", MyPagerTabStripActivity.class));//这个意义不大，使用MyTabPagerIndicatorActiivty代替
         myMenuItemList.add(new MyMenuItem("ViewPagerIndicator_Tab使用", MyTabPagerIndicatorActiivty.class));
         myMenuItemList.add(new MyMenuItem("ViewPagerIndicator_Circle使用", MyCirclesIndicatorPagerActivity.class));
@@ -58,6 +59,9 @@ public class MyActivity extends AbstractBarActivity {
         myMenuItemList.add(new MyMenuItem("VIEW绘制", CustomViewActivity.class));
         myMenuItemList.add(new MyMenuItem("圆角头像", CircleViewActivity.class));
         myMenuItemList.add(new MyMenuItem("圆形头像裁剪", MyImageCutActivity.class));
+        myMenuItemList.add(new MyMenuItem("ScrollView引导页面", ScrollerViewActivity.class));
+        myMenuItemList.add(new MyMenuItem("坚直ViewPager引导页面", VerticalViewPagerActivity.class));
+        myMenuItemList.add(new MyMenuItem("坚直ViewPager-Property动画引导页面", VerticalViewPagerActivity.class));
         listView.setAdapter(new MenuAdapter(mContext, myMenuItemList));
 
     }

@@ -15,7 +15,7 @@ import android.util.AttributeSet;
 
 import com.keertech.myandroid.R;
 
-public class ImageCut extends MyImageView {
+public class ImageCut extends MatrixImageView {
 
     private Paint paint_rect = new Paint();
     private final int mRadius = 200;
@@ -30,6 +30,10 @@ public class ImageCut extends MyImageView {
         paint_rect.setColor(getResources().getColor(R.color.color_cut_bg));
         paint_rect.setAntiAlias(true);
         cur_xfermode = new PorterDuffXfermode(PorterDuff.Mode.DST_OUT);
+        //Rect frame = new Rect();
+        //getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        //int statusBarHeight = frame.top;
+        //imageInit(400, 400, 40, null);
     }
 
     @Override
@@ -71,15 +75,19 @@ public class ImageCut extends MyImageView {
         Canvas canvas = new Canvas(bitmap2);
 
         // 其实qq窃取的照片是方形的 不是圆形的 如果你要圆形的 ，可以再代码中加入
-		canvas.drawRoundRect(new RectF(0, 0, 2 * mRadius, 2 * mRadius),
-				mRadius, mRadius, paint);
-		paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawRoundRect(new RectF(0, 0, 2 * mRadius, 2 * mRadius),
+                mRadius, mRadius, paint);
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
         RectF dst = new RectF(-bitmap.getWidth() / 2 + mRadius, -getHeight()
                 / 2 + mRadius, bitmap.getWidth() - bitmap.getWidth() / 2
                 + mRadius, getHeight() - getHeight() / 2 + mRadius);
         canvas.drawBitmap(bitmap, null, dst, paint);
         isToCutImage = false;
         return bitmap2;
+    }
+
+    public void setStatusBarHeight(int statusBarHeight){
+        this.topHeight=statusBarHeight;
     }
 
 }
