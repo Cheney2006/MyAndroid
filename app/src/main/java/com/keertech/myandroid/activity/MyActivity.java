@@ -57,6 +57,7 @@ public class MyActivity extends AbstractBarActivity {
         myMenuItemList.add(new MyMenuItem("IndexableListView使用", IndexableListViewActivity.class));
         myMenuItemList.add(new MyMenuItem("PinnedHeaderListView使用", MyPinnedHeaderListViewActivity.class));
         myMenuItemList.add(new MyMenuItem("VIEW绘制", CustomViewActivity.class));
+        myMenuItemList.add(new MyMenuItem("圆形进度条", MyRoundProgressBarActivity.class));
         myMenuItemList.add(new MyMenuItem("圆角头像", CircleViewActivity.class));
         myMenuItemList.add(new MyMenuItem("圆形头像裁剪", MyImageCutActivity.class));
         myMenuItemList.add(new MyMenuItem("ScrollView引导页面", ScrollerViewActivity.class));

@@ -178,6 +178,7 @@ public class MatrixImageView extends ImageView {
                                 }
                             }
                         } else if (mode == ZOOM) {
+                            //TODO 默认时只能放大。不能缩小
                             //只有同时触屏两个点的时候才执行
                             if (event.getPointerCount() >= 2) {
                                 float endDis = spacing(event);
