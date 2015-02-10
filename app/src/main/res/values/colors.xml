@@ -13,4 +13,8 @@
     <color name="color_blue">#5FB2F0</color>
     <color name="color_letter_bg">#F0F0F0</color>
     <color name="color_cut_bg">#55FFFFFF</color>
+    <!--ZXing二维码-->
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ffff00</color>
 </resources>

@@ -11,4 +11,6 @@
 上述新政策征求意见的公示期截止到10月29日，公示期间，市民如有不同意见，可在10月29日17点前，以电话、电子邮件和信函等形式向武汉市人力资源和社会保障局工伤与生育保险处反馈。联系电话：027-85749470。</string>
     <string name="action_settings">Settings</string>
 
+
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
 </resources>

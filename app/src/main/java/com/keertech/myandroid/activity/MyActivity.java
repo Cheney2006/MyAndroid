@@ -33,13 +33,6 @@ public class MyActivity extends AbstractBarActivity {
     }
 
     private void initData() {
-        //TODO　Palette
-        //TODO Animation
-        //TODO android-pulltorefresh   https://github.com/Trinea/android-open-project，上面ViewPage,下面ListView
-        //TODO View绘制
-        //TODO PinnedHeaderListView
-        //TODO 圆形裁剪
-        //TODO 上滑引导动画
         myMenuItemList = new ArrayList<MyMenuItem>();
         myMenuItemList.add(new MyMenuItem("校验控件", LoginActivity.class));
         myMenuItemList.add(new MyMenuItem("进度ActionBar", MyProgressBarActivity.class));
@@ -63,6 +56,9 @@ public class MyActivity extends AbstractBarActivity {
         myMenuItemList.add(new MyMenuItem("ScrollView引导页面", ScrollerViewActivity.class));
         myMenuItemList.add(new MyMenuItem("坚直ViewPager引导页面", VerticalViewPagerActivity.class));
         myMenuItemList.add(new MyMenuItem("坚直ViewPager-Property动画引导页面", VerticalViewPagerActivity.class));
+        myMenuItemList.add(new MyMenuItem("二维码扫描", MyCodeActivity.class));
+        myMenuItemList.add(new MyMenuItem("生成二维码", QRCodeGenerateActivity.class));
+        myMenuItemList.add(new MyMenuItem("生成二维码比较好", MaxCardActivity.class));
         listView.setAdapter(new MenuAdapter(mContext, myMenuItemList));
 
     }

@@ -23,21 +23,16 @@ public class MagicTextView extends TextView {
     private double mCurValue;
     // 当前变化后最终状态的目标值
     private double mGalValue;
-    // 控制加减法
-    private int rate = 1;
-    private boolean refreshing;
 
     DecimalFormat df = new DecimalFormat("0.00");
 
     private Handler mHandler = new Handler() {
         public void handleMessage(android.os.Message msg) {
-            if (rate * mCurValue < mGalValue) {
-                refreshing = true;
+            if (mCurValue < mGalValue) {
                 setText(df.format(mCurValue));
-                mCurValue += mRate * rate;
+                mCurValue += mRate;
                 mHandler.sendEmptyMessageDelayed(0, 50);
             } else {
-                refreshing = false;
                 setText(df.format(mGalValue));
             }
         }
@@ -59,9 +54,10 @@ public class MagicTextView extends TextView {
     public void setValue(double value) {
         mCurValue = 0.00;
         mGalValue = isShown() ? value : 0;
-        mRate =value / 20.00;
+        mRate = value / 20.00;
         BigDecimal b = new BigDecimal(mRate);
         mRate = b.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+        mHandler.sendEmptyMessageDelayed(0, 50);
     }
 
 
