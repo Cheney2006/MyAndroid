@@ -53,7 +53,7 @@ public class MagicTextView extends TextView {
 
     public void setValue(double value) {
         mCurValue = 0.00;
-        mGalValue = isShown() ? value : 0;
+        mGalValue = value;
         mRate = value / 20.00;
         BigDecimal b = new BigDecimal(mRate);
         mRate = b.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();

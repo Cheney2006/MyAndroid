@@ -56,10 +56,11 @@ public class MyActivity extends AbstractBarActivity {
         myMenuItemList.add(new MyMenuItem("圆形头像裁剪", MyImageCutActivity.class));
         myMenuItemList.add(new MyMenuItem("ScrollView引导页面", ScrollerViewActivity.class));
         myMenuItemList.add(new MyMenuItem("坚直ViewPager引导页面", VerticalViewPagerActivity.class));
-        myMenuItemList.add(new MyMenuItem("坚直ViewPager-Property动画引导页面", VerticalViewPagerActivity.class));
+        myMenuItemList.add(new MyMenuItem("坚直ViewPager-Property动画引导页面", PropertyAnimActivity.class));
         myMenuItemList.add(new MyMenuItem("二维码扫描", MyCodeActivity.class));
         myMenuItemList.add(new MyMenuItem("生成二维码", QRCodeGenerateActivity.class));
         myMenuItemList.add(new MyMenuItem("生成二维码比较好", MaxCardActivity.class));
+        myMenuItemList.add(new MyMenuItem("动态变化数字", TextIncreaseActivity.class));
         listView.setAdapter(new MenuAdapter(mContext, myMenuItemList));
 
     }

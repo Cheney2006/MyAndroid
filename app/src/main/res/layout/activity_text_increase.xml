@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:background="#FF6E00">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_white"
+            android:text="累计为用户赚取收益（元）" />
+
+        <com.keertech.myandroid.view.MagicTextView
+            android:id="@+id/income_mtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_white"
+            android:layout_marginTop="20dp"
+            android:textSize="24sp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/total_rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/color_white">
+        <TextView
+            android:id="@+id/totalLabel_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_label_gray"
+            android:text="本年成交金额（元）" />
+       <ImageView
+           android:id="@+id/arrowUp_iv"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="30dp"
+           android:layout_marginRight="10dp"
+           android:layout_alignParentRight="true"
+           android:src="@drawable/group_down_icon"/>
+        <com.keertech.myandroid.view.MagicTextView
+            android:id="@+id/total_mtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/totalLabel_tv"
+            android:layout_marginTop="20dp"
+            android:textSize="24sp"
+            android:textColor="@color/color_title_black"/>
+    </RelativeLayout>
+</LinearLayout>
