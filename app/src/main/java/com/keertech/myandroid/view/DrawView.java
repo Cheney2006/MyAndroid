@@ -38,6 +38,12 @@ public class DrawView extends View {
          * 方法 说明 drawRect 绘制矩形 drawCircle 绘制圆形 drawOval 绘制椭圆 drawPath 绘制任意多边形
          * drawLine 绘制直线 drawPoin 绘制点
          */
+          /*
+             * 风格：
+             *         STROKE 仅绘形状的轮廓
+             *         FILL   仅填充形状
+             *         FILL_AND_STROKE 填充并绘制形状的轮廓
+             */
         // 创建画笔
         Paint p = new Paint();
         p.setColor(Color.RED);// 设置红色
@@ -62,6 +68,7 @@ public class DrawView extends View {
 
         canvas.drawText("画矩形：", 10, 80, p);
         p.setColor(Color.GRAY);// 设置灰色
+
         p.setStyle(Paint.Style.FILL);//设置填满
         canvas.drawRect(60, 60, 80, 80, p);// 正方形
         canvas.drawRect(60, 90, 160, 100, p);// 长方形
@@ -93,7 +100,7 @@ public class DrawView extends View {
         p.reset();//重置
         p.setColor(Color.LTGRAY);
         p.setStyle(Paint.Style.STROKE);//设置空心
-        Path path1=new Path();
+        Path path1 = new Path();
         path1.moveTo(180, 200);
         path1.lineTo(200, 200);
         path1.lineTo(210, 210);
@@ -121,7 +128,7 @@ public class DrawView extends View {
         p.reset();
         p.setStyle(Paint.Style.STROKE);
         p.setColor(Color.GREEN);
-        Path path2=new Path();
+        Path path2 = new Path();
         path2.moveTo(100, 320);//设置Path的起点
         path2.quadTo(150, 310, 170, 400); //设置贝塞尔曲线的控制点坐标和终点坐标
         canvas.drawPath(path2, p);//画出贝塞尔曲线
@@ -130,11 +137,11 @@ public class DrawView extends View {
         p.setStyle(Paint.Style.FILL);
         canvas.drawText("画点：", 10, 390, p);
         canvas.drawPoint(60, 390, p);//画一个点
-        canvas.drawPoints(new float[]{60,400,65,400,70,400}, p);//画多个点
+        canvas.drawPoints(new float[]{60, 400, 65, 400, 70, 400}, p);//画多个点
 
         //画图片，就是贴图
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
-        canvas.drawBitmap(bitmap, 250,360, p);
+        canvas.drawBitmap(bitmap, 250, 360, p);
 
     }
 }

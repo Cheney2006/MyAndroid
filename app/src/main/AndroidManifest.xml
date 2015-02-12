@@ -87,6 +87,7 @@
         <activity android:name=".activity.QRCodeScannerActivity" />
         <activity android:name=".activity.QRCodeGenerateActivity" />
         <activity android:name=".activity.MaxCardActivity" />
+        <activity android:name=".activity.MyViewPagerIndicatorActivity" />
 
         <service
             android:name="com.baidu.location.f"

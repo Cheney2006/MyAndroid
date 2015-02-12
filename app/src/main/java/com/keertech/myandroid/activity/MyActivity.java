@@ -40,6 +40,7 @@ public class MyActivity extends AbstractBarActivity {
         myMenuItemList.add(new MyMenuItem("FragmentTabHost底部菜单", BottomMenuActivity.class));
         myMenuItemList.add(new MyMenuItem("ViewPager+RadioGroup底部菜单", BottomMenuPagerActivity.class));
         myMenuItemList.add(new MyMenuItem("仿微信底部菜单", WeiXinIndexActivity.class));
+        myMenuItemList.add(new MyMenuItem("进化版Tab", MyViewPagerIndicatorActivity.class));
 //        myMenuItemList.add(new MyMenuItem("PagerTabStrip顶部导航", MyPagerTabStripActivity.class));//这个意义不大，使用MyTabPagerIndicatorActiivty代替
         myMenuItemList.add(new MyMenuItem("ViewPagerIndicator_Tab使用", MyTabPagerIndicatorActiivty.class));
         myMenuItemList.add(new MyMenuItem("ViewPagerIndicator_Circle使用", MyCirclesIndicatorPagerActivity.class));
