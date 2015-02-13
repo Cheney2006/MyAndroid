@@ -61,6 +61,8 @@ public class MyActivity extends AbstractBarActivity {
         myMenuItemList.add(new MyMenuItem("生成二维码", QRCodeGenerateActivity.class));
         myMenuItemList.add(new MyMenuItem("生成二维码比较好", MaxCardActivity.class));
         myMenuItemList.add(new MyMenuItem("动态变化数字", TextIncreaseActivity.class));
+        myMenuItemList.add(new MyMenuItem("动态布局动画", LayoutAnimationActivity.class));
+        myMenuItemList.add(new MyMenuItem("GridLayout", GridLayoutActivity.class));
         listView.setAdapter(new MenuAdapter(mContext, myMenuItemList));
 
     }

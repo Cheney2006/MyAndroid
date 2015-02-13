@@ -4,5 +4,7 @@
     android:propertyName="rotation"
     android:valueFrom="180"
     android:valueTo="360.0"
+    android:pivotX="0.0"
+    android:pivotY="0.0"
     android:valueType="floatType" />
     <!--    android:repeatCount="-1"无限循环-->

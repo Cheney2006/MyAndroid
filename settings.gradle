@@ -1,1 +1,1 @@
-include ':app', ':common', ':pulltorefresh'
+include ':app', ':common', ':pulltorefresh', ':gridlayout'

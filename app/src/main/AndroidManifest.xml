@@ -89,6 +89,8 @@
         <activity android:name=".activity.MaxCardActivity" />
         <activity android:name=".activity.MyViewPagerIndicatorActivity" />
         <activity android:name=".activity.TextIncreaseActivity" />
+        <activity android:name=".activity.LayoutAnimationActivity" />
+        <activity android:name=".activity.GridLayoutActivity" />
 
         <service
             android:name="com.baidu.location.f"

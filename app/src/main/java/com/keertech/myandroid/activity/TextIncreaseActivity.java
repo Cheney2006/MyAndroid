@@ -2,6 +2,7 @@ package com.keertech.myandroid.activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.keertech.myandroid.R;
@@ -9,6 +10,7 @@ import com.keertech.myandroid.activity.base.AbstractBarActivity;
 import com.keertech.myandroid.view.MagicTextView;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorInflater;
+import com.nineoldandroids.animation.ObjectAnimator;
 import com.yftools.ViewUtil;
 import com.yftools.view.annotation.ContentView;
 import com.yftools.view.annotation.ViewInject;
@@ -30,6 +32,8 @@ public class TextIncreaseActivity extends AbstractBarActivity {
     @ViewInject(R.id.arrowUp_iv)
     private ImageView arrowUp_iv;
     private boolean isDown = true;
+    @ViewInject(R.id.clickMe_btn)
+    private Button clickMe_btn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,15 +51,32 @@ public class TextIncreaseActivity extends AbstractBarActivity {
         } else {
             animator = AnimatorInflater.loadAnimator(mContext, R.animator.arrow_rotate_down);
         }
+//        arrowUp_iv.setPivotX(0);
+//        arrowUp_iv.setPivotY(0);
+//        //显示的调用invalidate
+//        arrowUp_iv.invalidate();
         animator.setTarget(arrowUp_iv);
         animator.start();
-        //API12以下报错。
+        //API 12以下报错。
 //        if(isDown){
 //            arrowUp_iv.animate().rotation(180);
 //        }else{
 //            arrowUp_iv.animate().rotation(360);
 //        }
         isDown = !isDown;
+    }
 
+    @OnClick(R.id.clickMe_btn)
+    public void clickMeClick(View view) {
+        float width = clickMe_btn.getWidth();
+        if (clickMe_btn.getX() == 0) {//3.0以下报错
+            ObjectAnimator translationRight = ObjectAnimator.ofFloat(clickMe_btn, "x", width);
+            translationRight.setDuration(1500);
+            translationRight.start();
+        } else {
+            ObjectAnimator translationLeft =ObjectAnimator.ofFloat(clickMe_btn, "x", 0f);
+            translationLeft.setDuration(1500);
+            translationLeft.start();
+        }
     }
 }
