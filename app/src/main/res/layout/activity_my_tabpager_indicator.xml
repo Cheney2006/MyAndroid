@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:background="@color/color_white">
 
-    <com.keertech.common.view.pagerIndicator.TabPageIndicator
+    <com.keertech.common.view.pageIndicator.TabPageIndicator
         android:id="@+id/indicator"
         android:layout_height="wrap_content"
         android:layout_width="match_parent" />

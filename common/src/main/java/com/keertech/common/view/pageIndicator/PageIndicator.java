@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.keertech.common.view.PagerIndicator;
+package com.keertech.common.view.pageIndicator;
 
 import android.support.v4.view.ViewPager;
 

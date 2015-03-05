@@ -1,4 +1,4 @@
-package com.keertech.common.view.PagerIndicator;
+package com.keertech.common.view.pageIndicator;
 
 import android.content.Context;
 import android.content.res.TypedArray;
