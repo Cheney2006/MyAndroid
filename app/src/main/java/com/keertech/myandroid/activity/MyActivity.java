@@ -63,6 +63,9 @@ public class MyActivity extends AbstractBarActivity {
         myMenuItemList.add(new MyMenuItem("动态变化数字", TextIncreaseActivity.class));
         myMenuItemList.add(new MyMenuItem("动态布局动画", LayoutAnimationActivity.class));
         myMenuItemList.add(new MyMenuItem("GridLayout", GridLayoutActivity.class));
+        myMenuItemList.add(new MyMenuItem("手势密码", GestureLockActivity.class));
+        myMenuItemList.add(new MyMenuItem("下拉自动更新", PullToRefreshListScrollLoadMoreActivity.class));
+        myMenuItemList.add(new MyMenuItem("头部带ViewPager下拉自动更新", PullToRefreshListScrollLoadMoreWithHeaderViewPagerActivity.class));
         listView.setAdapter(new MenuAdapter(mContext, myMenuItemList));
 
     }

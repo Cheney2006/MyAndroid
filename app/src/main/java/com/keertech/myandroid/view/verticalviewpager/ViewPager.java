@@ -70,7 +70,7 @@ import java.util.Comparator;
  *
  * <p>Note this class is currently under early design and
  * development.  The API will likely change in later updates of
- * the compatibility library, requiring changes to the source code
+ * the compatibility com.handmark.pulltorefresh.library, requiring changes to the source code
  * of apps when they are compiled against the newer version.</p>
  *
  * <p>ViewPager is most often used in conjunction with {@link android.app.Fragment},
@@ -688,7 +688,7 @@ public class ViewPager extends ViewGroup {
     }
 
     /**
-     * Set a separate OnPageChangeListener for internal use by the support library.
+     * Set a separate OnPageChangeListener for internal use by the support com.handmark.pulltorefresh.library.
      *
      * @param listener Listener to set
      * @return The old listener that was set, if any.

@@ -1,9 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/activity/ScrollerViewActivity.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/zxing/decoding/CaptureActivityHandler.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/zxing/view/ViewfinderView.java" charset="UTF-8" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/activity/GestureEditActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/activity/GestureLockActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/activity/GestureVerifyActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/activity/PullToRefreshHorizontalScrollViewActivity.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/activity/PullToRefreshListScrollLoadMoreActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/activity/PullToRefreshListScrollLoadMoreWithHeaderViewPagerActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/gesturelock/GestureContentView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/gesturelock/GestureDrawline.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/gesturelock/GesturePoint.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/keertech/myandroid/gesturelock/LockIndicator.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_ptr_list.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/ILoadingLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/IPullToRefresh.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/LoadingLayoutProxy.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/OverscrollHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshAdapterViewBase.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshBase.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshExpandableListView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshGridView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshListView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshScrollView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshWebView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/extras/PullToRefreshWebView2.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/extras/SoundPullEventListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/internal/EmptyViewMethodAccessor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/internal/FlipLoadingLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/internal/IndicatorLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/internal/LoadingLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/internal/RotateLoadingLayout.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/internal/Utils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/java/com/handmark/pulltorefresh/library/internal/ViewCompat.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pulltorefresh/src/main/res" charset="GBK" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
-

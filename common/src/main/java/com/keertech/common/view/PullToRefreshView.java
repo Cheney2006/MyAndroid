@@ -16,7 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.jxd.common.R;
+import com.keertech.common.R;
 
 
 public class PullToRefreshView extends LinearLayout {
