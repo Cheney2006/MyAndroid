@@ -793,11 +793,11 @@ public abstract class PullToRefreshBase<T extends View> extends LinearLayout imp
         }
     }
 
-    public void setLoadingMore() {
-        setLoadingMore(true);
+    public void startLoadingMore() {
+        startLoadingMore(true);
     }
 
-    public void setLoadingMore(final boolean doScroll) {
+    public void startLoadingMore(final boolean doScroll) {
         if(isScrollLoadMore()){
             if (!isRefreshing()) {
                 mState = State.REFRESHING;

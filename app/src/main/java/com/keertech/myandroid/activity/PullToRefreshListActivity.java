@@ -1,51 +1,54 @@
-/**
- * ****************************************************************************
+/*******************************************************************************
  * Copyright 2011, 2012 Chris Banes.
- * <p/>
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * <p/>
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * <p/>
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * *****************************************************************************
- */
+ *******************************************************************************/
 package com.keertech.myandroid.activity;
 
 import android.app.ListActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.format.DateUtils;
-import android.widget.AbsListView;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.handmark.pulltorefresh.library.ILoadingLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.OnLastItemVisibleListener;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.keertech.myandroid.R;
-import com.keertech.myandroid.adapter.LoopPagerAdapter;
-import com.keertech.myandroid.view.LoopPagerView;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.List;
 
-public final class PullToRefreshListScrollLoadMoreWithHeaderViewPagerActivity extends ListActivity {
+public final class PullToRefreshListActivity extends ListActivity {
 
+    static final int MENU_MANUAL_REFRESH = 0;
+    static final int MENU_DISABLE_SCROLL = 1;
+    static final int MENU_SET_MODE = 2;
+    static final int MENU_DEMO = 3;
 
     private LinkedList<String> mListItems;
     private PullToRefreshListView mPullRefreshListView;
     private ArrayAdapter<String> mAdapter;
-    private LoopPagerView loopPagerView;
 
     /**
      * Called when the activity is first created.
@@ -56,8 +59,7 @@ public final class PullToRefreshListScrollLoadMoreWithHeaderViewPagerActivity ex
         setContentView(R.layout.activity_ptr_list);
 
         mPullRefreshListView = (PullToRefreshListView) findViewById(R.id.pull_refresh_list);
-        //设置可以自动加载
-        mPullRefreshListView.setScrollLoadMore(true);
+        mPullRefreshListView.setMode(Mode.BOTH);
         //initIndicator();
 
 //        mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
@@ -79,7 +81,8 @@ public final class PullToRefreshListScrollLoadMoreWithHeaderViewPagerActivity ex
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
                 System.out.println("onPullDownToRefresh");
-                String label = DateUtils.formatDateTime(getApplicationContext(), System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_ALL);
+                String label = DateUtils.formatDateTime(getApplicationContext(), System.currentTimeMillis(),
+                        DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_ABBREV_ALL);
 
                 // Update the LastUpdatedLabel
                 refreshView.getLoadingLayoutProxy(true, false).setLastUpdatedLabel(label);
@@ -101,25 +104,16 @@ public final class PullToRefreshListScrollLoadMoreWithHeaderViewPagerActivity ex
             public void onLastItemVisible() {
                 // Do work to refresh the list here.
                 // new GetDataTask().execute();
-                Toast.makeText(PullToRefreshListScrollLoadMoreWithHeaderViewPagerActivity.this, "End of List!", Toast.LENGTH_SHORT).show();
-                //开启自动加载
-                mPullRefreshListView.startLoadingMore();
+                Toast.makeText(PullToRefreshListActivity.this, "End of List!", Toast.LENGTH_SHORT).show();
+               // mPullRefreshListView.setRefreshing(true);
+                //mPullRefreshListView.setMode(Mode.BOTH);
+                //mPullRefreshListView.startLoadingMore(true);
             }
         });
-        //自动刷新，一进来就刷新
+        //自动刷新
         mPullRefreshListView.setRefreshing();
 
         ListView actualListView = mPullRefreshListView.getRefreshableView();
-
-        loopPagerView = new LoopPagerView(this);
-        loopPagerView.setLayoutParams(new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, 300));
-        List<String> photoList = new ArrayList<>();
-        photoList.add("");
-        photoList.add("");
-        photoList.add("");
-        photoList.add("");
-        loopPagerView.setPagerAdapter(new LoopPagerAdapter(this, photoList), photoList.size());
-        actualListView.addHeaderView(loopPagerView);
 
         // Need to use the Actual ListView when registering for Context Menu
         registerForContextMenu(actualListView);
@@ -140,18 +134,6 @@ public final class PullToRefreshListScrollLoadMoreWithHeaderViewPagerActivity ex
         // You can also just use setListAdapter(mAdapter) or
         // mPullRefreshListView.setAdapter(mAdapter)
         actualListView.setAdapter(mAdapter);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        loopPagerView.startLoop();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        loopPagerView.stopLoop();
     }
 
     private void initIndicator() {
@@ -209,13 +191,80 @@ public final class PullToRefreshListScrollLoadMoreWithHeaderViewPagerActivity ex
             mAdapter.notifyDataSetChanged();
 
             // Call onRefreshComplete when the list has been refreshed.
-            mPullRefreshListView.onLoadMoreComplete();
-            //禁止自动加载
-            mPullRefreshListView.setScrollLoadMore(false);
+            mPullRefreshListView.onRefreshComplete();
+            //mPullRefreshListView.startLoadingMore(false);
+            //设置不下拉
+            mPullRefreshListView.setMode(Mode.PULL_FROM_START);
             super.onPostExecute(result);
         }
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add(0, MENU_MANUAL_REFRESH, 0, "Manual Refresh");
+        menu.add(0, MENU_DISABLE_SCROLL, 1,
+                mPullRefreshListView.isScrollingWhileRefreshingEnabled() ? "Disable Scrolling while Refreshing"
+                        : "Enable Scrolling while Refreshing");
+        menu.add(0, MENU_SET_MODE, 0, mPullRefreshListView.getMode() == Mode.BOTH ? "Change to MODE_PULL_DOWN"
+                : "Change to MODE_PULL_BOTH");
+        menu.add(0, MENU_DEMO, 0, "Demo");
+        return super.onCreateOptionsMenu(menu);
+    }
 
-    private String[] mStrings = {"Abbaye de Belloc", "Abbaye du Mont des Cats"};
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) menuInfo;
+
+        menu.setHeaderTitle("Item: " + getListView().getItemAtPosition(info.position));
+        menu.add("Item 1");
+        menu.add("Item 2");
+        menu.add("Item 3");
+        menu.add("Item 4");
+
+        super.onCreateContextMenu(menu, v, menuInfo);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem disableItem = menu.findItem(MENU_DISABLE_SCROLL);
+        disableItem
+                .setTitle(mPullRefreshListView.isScrollingWhileRefreshingEnabled() ? "Disable Scrolling while Refreshing"
+                        : "Enable Scrolling while Refreshing");
+
+        MenuItem setModeItem = menu.findItem(MENU_SET_MODE);
+        setModeItem.setTitle(mPullRefreshListView.getMode() == Mode.BOTH ? "Change to MODE_FROM_START"
+                : "Change to MODE_PULL_BOTH");
+
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case MENU_MANUAL_REFRESH:
+                new GetDataTask().execute();
+                mPullRefreshListView.setRefreshing(false);
+                break;
+            case MENU_DISABLE_SCROLL:
+                mPullRefreshListView.setScrollingWhileRefreshingEnabled(!mPullRefreshListView
+                        .isScrollingWhileRefreshingEnabled());
+                break;
+            case MENU_SET_MODE:
+                mPullRefreshListView.setMode(mPullRefreshListView.getMode() == Mode.BOTH ? Mode.PULL_FROM_START
+                        : Mode.BOTH);
+                break;
+            case MENU_DEMO:
+                mPullRefreshListView.demo();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private String[] mStrings = {"Abbaye de Belloc", "Abbaye du Mont des Cats", "Abertam", "Abondance", "Ackawi",
+            "Acorn", "Adelost", "Affidelice au Chablis", "Afuega'l Pitu", "Airag", "Airedale", "Aisy Cendre",
+            "Allgauer Emmentaler", "Abbaye de Belloc", "Abbaye du Mont des Cats", "Abertam", "Abondance", "Ackawi",
+            "Acorn", "Adelost", "Affidelice au Chablis", "Afuega'l Pitu", "Airag", "Airedale", "Aisy Cendre",
+            "Allgauer Emmentaler"};
 }

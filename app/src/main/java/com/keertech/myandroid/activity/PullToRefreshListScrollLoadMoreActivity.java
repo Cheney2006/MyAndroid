@@ -94,7 +94,7 @@ public final class PullToRefreshListScrollLoadMoreActivity extends ListActivity 
                 // Do work to refresh the list here.
                 // new GetDataTask().execute();
                 Toast.makeText(PullToRefreshListScrollLoadMoreActivity.this, "End of List!", Toast.LENGTH_SHORT).show();
-                mPullRefreshListView.setLoadingMore();
+                mPullRefreshListView.startLoadingMore();
             }
         });
         //自动刷新
